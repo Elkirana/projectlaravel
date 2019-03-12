@@ -11,6 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('kategori', function () {
+    return "hello kategori";
 });
+
+Route::get('layout', function () {
+	return view ('layouts.master');
+});
+
+
+
+
+Route::resource('kategori','KategoriController')->except(['delete','destroy']);
