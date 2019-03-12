@@ -19,6 +19,11 @@ Route::get('layout', function () {
 	return view ('layouts.master');
 });
 
+Route::get('dashboard',function() {
+	return view('layouts.dashboard');
+});
+
+
 
 
 
