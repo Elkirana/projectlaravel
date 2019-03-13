@@ -12,12 +12,17 @@ class KategoriController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(\Illuminate\Http\Request $request)
     {
-        $kategories = kategori::all();
+         $kategories = kategori::when($request->keyword, function ($query) use ($request) {
+        $query->where('name', 'like', "%{$request->keyword}%");
+    })->get();
+    return view('category.index', compact('kategories'));
+
+        //$kategories = kategori::all();
         
 
-        return view('kategori', compact('kategories'));
+        //return view('category.index', compact('kategories'));
         
     }
 

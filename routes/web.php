@@ -23,7 +23,16 @@ Route::get('dashboard',function() {
 	return view('layouts.dashboard');
 });
 
+Route::get('category',function() {
+	return view('category.index');
+});
 
+Route::get('app',function() {
+	return view('master.app');
+});
+
+Route::resource('tbktg','KategoriController');
+	
 
 
 
