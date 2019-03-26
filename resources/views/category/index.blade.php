@@ -89,6 +89,7 @@
                   
                  
                   <th>Nama Kategori</th>
+                  <th>Aksi</th>
                   
                 </tr>
                 @foreach($kategories as $kategori)
@@ -97,7 +98,13 @@
                         {{$kategori->name }}
                      
                   </td>
+                  <td>
+                  <a href="/edit/edit/{{ $data->categories_name }}">Edit</a>
+                  <a href="/hapus/destroy/{{ $data->categories_name }}">Hapus</a>
+                </td>
                     </tr>
+                  }
+                  }
                   
                  @endforeach
               </table>
